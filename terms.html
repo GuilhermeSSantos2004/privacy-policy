@@ -34,33 +34,109 @@
         a {
             color: #0056b3;
         }
+        .language-switcher {
+            text-align: right;
+            margin: 10px;
+        }
+        .language-switcher img {
+            width: 30px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
     </style>
+    <script>
+        // Objeto de tradução
+        const translations = {
+            en: {
+                title: "Terms of Service - Fluable",
+                lastUpdate: "Last update: September 10, 2:45 BRT",
+                section1: "1. Acceptance of Terms",
+                section1Text: "By accessing and using Fluable, you agree to comply with these Terms of Service and all applicable laws and regulations.",
+                section2: "2. Changes to Terms",
+                section2Text: "We reserve the right to modify these terms at any time, with changes becoming effective immediately upon posting.",
+                section3: "3. Description of Service",
+                section3Text: "Fluable offers language learning services using artificial intelligence technology. We do not guarantee the accuracy or completeness of any content or services.",
+                section4: "4. Intellectual Property Rights",
+                section4Text: "The content and technology provided by Fluable are protected by copyright, trademarks, and other intellectual property laws.",
+                section5: "5. Usage Restrictions",
+                section5Text: "You agree not to reproduce, duplicate, copy, sell, resell, or exploit any part of the service without our express written permission.",
+                section6: "6. Disclaimer of Liability and Limitation of Liability",
+                section6Text: "We are not liable for any direct, indirect, incidental, special, consequential, or exemplary damages arising from the use or inability to use our services.",
+                section7: "7. Contact",
+                section7Text: "If you have any questions about these Terms of Service, please contact us via email:",
+            },
+            pt: {
+                title: "Termos de Serviço da Fluable",
+                lastUpdate: "Última atualização: 10 de setembro 2:45 BRT",
+                section1: "1. Aceitação dos Termos",
+                section1Text: "Ao acessar e usar a Fluable, você concorda em cumprir estes Termos de Serviço e todas as leis e regulamentos aplicáveis.",
+                section2: "2. Mudanças nos Termos",
+                section2Text: "Reservamo-nos o direito de modificar estes termos a qualquer momento, com as mudanças entrando em vigor imediatamente após a publicação.",
+                section3: "3. Descrição do Serviço",
+                section3Text: "A Fluable oferece serviços de aprendizado de idiomas utilizando tecnologia de inteligência artificial. Não garantimos a correção ou a completude de qualquer conteúdo ou serviços.",
+                section4: "4. Direitos de Propriedade Intelectual",
+                section4Text: "Os conteúdos e tecnologias fornecidos pela Fluable são protegidos por direitos autorais, marcas registradas e outras leis de propriedade intelectual.",
+                section5: "5. Limitações de Uso",
+                section5Text: "Você concorda em não reproduzir, duplicar, copiar, vender, revender ou explorar qualquer parte do serviço sem nossa permissão expressa por escrito.",
+                section6: "6. Isenção de Responsabilidade e Limitação de Responsabilidade",
+                section6Text: "Não nos responsabilizamos por quaisquer danos diretos, indiretos, incidentais, especiais, consequenciais ou exemplares decorrentes do uso ou incapacidade de usar nossos serviços.",
+                section7: "7. Contato",
+                section7Text: "Se tiver perguntas sobre estes Termos de Serviço, por favor, entre em contato através do email:",
+            }
+        };
+
+        // Função para alternar o idioma
+        function switchLanguage(language) {
+            document.getElementById('title').textContent = translations[language].title;
+            document.getElementById('lastUpdate').textContent = translations[language].lastUpdate;
+            document.getElementById('section1').textContent = translations[language].section1;
+            document.getElementById('section1Text').textContent = translations[language].section1Text;
+            document.getElementById('section2').textContent = translations[language].section2;
+            document.getElementById('section2Text').textContent = translations[language].section2Text;
+            document.getElementById('section3').textContent = translations[language].section3;
+            document.getElementById('section3Text').textContent = translations[language].section3Text;
+            document.getElementById('section4').textContent = translations[language].section4;
+            document.getElementById('section4Text').textContent = translations[language].section4Text;
+            document.getElementById('section5').textContent = translations[language].section5;
+            document.getElementById('section5Text').textContent = translations[language].section5Text;
+            document.getElementById('section6').textContent = translations[language].section6;
+            document.getElementById('section6Text').textContent = translations[language].section6Text;
+            document.getElementById('section7').textContent = translations[language].section7;
+            document.getElementById('section7Text').textContent = translations[language].section7Text;
+        }
+    </script>
 </head>
 <body>
+    <!-- Troca de idioma -->
+    <div class="language-switcher">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Português" onclick="switchLanguage('pt')" title="Português">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English" onclick="switchLanguage('en')" title="English">
+    </div>
+
     <div class="container">
-        <h1>Termos de Serviço da Fluable</h1>
-        <p>Última atualização: 10 de setembro 2:45 BRT</p>
+        <h1 id="title">Termos de Serviço da Fluable</h1>
+        <p id="lastUpdate">Última atualização: 10 de setembro 2:45 BRT</p>
 
-        <h2>1. Aceitação dos Termos</h2>
-        <p>Ao acessar e usar a Fluable, você concorda em cumprir estes Termos de Serviço e todas as leis e regulamentos aplicáveis.</p>
+        <h2 id="section1">1. Aceitação dos Termos</h2>
+        <p id="section1Text">Ao acessar e usar a Fluable, você concorda em cumprir estes Termos de Serviço e todas as leis e regulamentos aplicáveis.</p>
 
-        <h2>2. Mudanças nos Termos</h2>
-        <p>Reservamo-nos o direito de modificar estes termos a qualquer momento, com as mudanças entrando em vigor imediatamente após a publicação.</p>
+        <h2 id="section2">2. Mudanças nos Termos</h2>
+        <p id="section2Text">Reservamo-nos o direito de modificar estes termos a qualquer momento, com as mudanças entrando em vigor imediatamente após a publicação.</p>
 
-        <h2>3. Descrição do Serviço</h2>
-        <p>A Fluable oferece serviços de aprendizado de idiomas utilizando tecnologia de inteligência artificial. Não garantimos a correção ou a completude de qualquer conteúdo ou serviços.</p>
+        <h2 id="section3">3. Descrição do Serviço</h2>
+        <p id="section3Text">A Fluable oferece serviços de aprendizado de idiomas utilizando tecnologia de inteligência artificial. Não garantimos a correção ou a completude de qualquer conteúdo ou serviços.</p>
 
-        <h2>4. Direitos de Propriedade Intelectual</h2>
-        <p>Os conteúdos e tecnologias fornecidos pela Fluable são protegidos por direitos autorais, marcas registradas e outras leis de propriedade intelectual.</p>
+        <h2 id="section4">4. Direitos de Propriedade Intelectual</h2>
+        <p id="section4Text">Os conteúdos e tecnologias fornecidos pela Fluable são protegidos por direitos autorais, marcas registradas e outras leis de propriedade intelectual.</p>
 
-        <h2>5. Limitações de Uso</h2>
-        <p>Você concorda em não reproduzir, duplicar, copiar, vender, revender ou explorar qualquer parte do serviço sem nossa permissão expressa por escrito.</p>
+        <h2 id="section5">5. Limitações de Uso</h2>
+        <p id="section5Text">Você concorda em não reproduzir, duplicar, copiar, vender, revender ou explorar qualquer parte do serviço sem nossa permissão expressa por escrito.</p>
 
-        <h2>6. Isenção de Responsabilidade e Limitação de Responsabilidade</h2>
-        <p>Não nos responsabilizamos por quaisquer danos diretos, indiretos, incidentais, especiais, consequenciais ou exemplares decorrentes do uso ou incapacidade de usar nossos serviços.</p>
+        <h2 id="section6">6. Isenção de Responsabilidade e Limitação de Responsabilidade</h2>
+        <p id="section6Text">Não nos responsabilizamos por quaisquer danos diretos, indiretos, incidentais, especiais, consequenciais ou exemplares decorrentes do uso ou incapacidade de usar nossos serviços.</p>
 
-        <h2>7. Contato</h2>
-        <p>Se tiver perguntas sobre estes Termos de Serviço, por favor, entre em contato através do email: <a href="mailto:fluableable@gmail.com">fluableable@gmail.com</a>.</p>
+        <h2 id="section7">7. Contato</h2>
+        <p id="section7Text">Se tiver perguntas sobre estes Termos de Serviço, por favor, entre em contato através do email: <a href="mailto:fluableable@gmail.com">fluableable@gmail.com</a>.</p>
     </div>
 </body>
 </html>
