@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -35,44 +34,124 @@
         a {
             color: #0056b3;
         }
+        .language-switcher {
+            text-align: right;
+            margin: 10px;
+        }
+        .language-switcher img {
+            width: 30px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
     </style>
+    <script>
+        // Objeto de tradução
+        const translations = {
+            en: {
+                title: "Privacy Policy for Fluable",
+                lastUpdate: "Last updated: September 10, 2024",
+                section1: "1. Information We Collect",
+                section1Text: "We collect personal information, audios, and interactions with our application via WhatsApp to provide and improve our services. This includes:",
+                section2: "2. How We Use Your Information",
+                section2Text: "We use the information to:",
+                section3: "3. Information Sharing",
+                section3Text: "We do not share your information with third parties, except when necessary to provide our services or comply with legal requirements.",
+                section4: "4. Data Storage and Security",
+                section4Text: "Data is stored on secure servers and deleted after the necessary processing to respond to your interactions. We take strict measures to protect your data from unauthorized access or loss.",
+                section5: "5. Your Rights",
+                section5Text: "You have the right to access, correct, and request the deletion of your personal data. You can also withdraw your consent for processing your data at any time.",
+                section6: "6. Changes to the Privacy Policy",
+                section6Text: "Any changes to our policy will be communicated through this channel and will take effect immediately upon publication.",
+                section7: "7. Contact",
+                section7Text: "If you have any questions about this policy or the processing of your personal data, please contact us via email:",
+                lgpd: "This privacy policy complies with Brazil's General Data Protection Law (LGPD) and global privacy policies, including Facebook's policies, ensuring a high standard of protection and transparency.",
+            },
+            pt: {
+                title: "Política de Privacidade para Fluable",
+                lastUpdate: "Última atualização: 10 de Setembro de 2024",
+                section1: "1. Informações que Coletamos",
+                section1Text: "Coletamos informações pessoais, áudios e interações com nossa aplicação através do WhatsApp para fornecer e melhorar nossos serviços. Isso inclui:",
+                section2: "2. Como Usamos Suas Informações",
+                section2Text: "Utilizamos as informações para:",
+                section3: "3. Compartilhamento de Informações",
+                section3Text: "Não compartilhamos suas informações com terceiros, exceto em casos necessários para o fornecimento de nossos serviços ou por exigências legais.",
+                section4: "4. Armazenamento e Segurança dos Dados",
+                section4Text: "Os dados são armazenados em servidores seguros e são excluídos após o processamento necessário para responder às suas interações. Adotamos medidas rigorosas para proteger seus dados contra acessos não autorizados ou perda.",
+                section5: "5. Seus Direitos",
+                section5Text: "Você tem direito de acessar, corrigir, e solicitar a exclusão de seus dados pessoais. Também pode retirar seu consentimento ao processamento de seus dados a qualquer momento.",
+                section6: "6. Mudanças na Política de Privacidade",
+                section6Text: "Eventuais alterações em nossa política serão comunicadas por este mesmo canal e entrarão em vigor imediatamente após sua publicação.",
+                section7: "7. Contato",
+                section7Text: "Se tiver perguntas sobre esta política ou sobre o tratamento de seus dados pessoais, por favor, entre em contato através do email:",
+                lgpd: "Esta política de privacidade está em conformidade com a Lei Geral de Proteção de Dados (LGPD) do Brasil e as políticas de privacidade globais, incluindo as políticas do Facebook, garantindo um alto padrão de proteção e transparência.",
+            }
+        };
+
+        // Função para alternar o idioma
+        function switchLanguage(language) {
+            document.getElementById('title').textContent = translations[language].title;
+            document.getElementById('lastUpdate').textContent = translations[language].lastUpdate;
+            document.getElementById('section1').textContent = translations[language].section1;
+            document.getElementById('section1Text').textContent = translations[language].section1Text;
+            document.getElementById('section2').textContent = translations[language].section2;
+            document.getElementById('section2Text').textContent = translations[language].section2Text;
+            document.getElementById('section3').textContent = translations[language].section3;
+            document.getElementById('section3Text').textContent = translations[language].section3Text;
+            document.getElementById('section4').textContent = translations[language].section4;
+            document.getElementById('section4Text').textContent = translations[language].section4Text;
+            document.getElementById('section5').textContent = translations[language].section5;
+            document.getElementById('section5Text').textContent = translations[language].section5Text;
+            document.getElementById('section6').textContent = translations[language].section6;
+            document.getElementById('section6Text').textContent = translations[language].section6Text;
+            document.getElementById('section7').textContent = translations[language].section7;
+            document.getElementById('section7Text').textContent = translations[language].section7Text;
+            document.getElementById('lgpd').textContent = translations[language].lgpd;
+        }
+    </script>
 </head>
 <body>
+    <!-- Troca de idioma -->
+    <div class="language-switcher">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Português" onclick="switchLanguage('pt')" title="Português">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English" onclick="switchLanguage('en')" title="English">
+    </div>
+
     <div class="container">
-        <h1>Política de Privacidade para Fluable</h1>
-        <p>Última atualização: 10 de Setembro de 2024</p>
-        <h2>1. Informações que Coletamos</h2>
-        <p>Coletamos informações pessoais, áudios e interações com nossa aplicação através do WhatsApp para fornecer e melhorar nossos serviços. Isso inclui:</p>
+        <h1 id="title">Política de Privacidade para Fluable</h1>
+        <p id="lastUpdate">Última atualização: 10 de Setembro de 2024</p>
+        
+        <h2 id="section1">1. Informações que Coletamos</h2>
+        <p id="section1Text">Coletamos informações pessoais, áudios e interações com nossa aplicação através do WhatsApp para fornecer e melhorar nossos serviços. Isso inclui:</p>
         <ul>
             <li>Números de telefone e identificadores de dispositivo.</li>
             <li>Mensagens de texto e áudios enviados para a IA.</li>
             <li>Respostas a mensagens interativas para personalização do serviço.</li>
         </ul>
         
-        <h2>2. Como Usamos Suas Informações</h2>
-        <p>Utilizamos as informações para:</p>
+        <h2 id="section2">2. Como Usamos Suas Informações</h2>
+        <p id="section2Text">Utilizamos as informações para:</p>
         <ul>
             <li>Melhorar e personalizar nossa aplicação.</li>
             <li>Responder a suas interações e consultas.</li>
             <li>Realizar análises internas e manutenção técnica.</li>
         </ul>
         
-        <h2>3. Compartilhamento de Informações</h2>
-        <p>Não compartilhamos suas informações com terceiros, exceto em casos necessários para o fornecimento de nossos serviços ou por exigências legais.</p>
+        <h2 id="section3">3. Compartilhamento de Informações</h2>
+        <p id="section3Text">Não compartilhamos suas informações com terceiros, exceto em casos necessários para o fornecimento de nossos serviços ou por exigências legais.</p>
         
-        <h2>4. Armazenamento e Segurança dos Dados</h2>
-        <p>Os dados são armazenados em servidores seguros e são excluídos após o processamento necessário para responder às suas interações. Adotamos medidas rigorosas para proteger seus dados contra acessos não autorizados ou perda.</p>
+        <h2 id="section4">4. Armazenamento e Segurança dos Dados</h2>
+        <p id="section4Text">Os dados são armazenados em servidores seguros e são excluídos após o processamento necessário para responder às suas interações. Adotamos medidas rigorosas para proteger seus dados contra acessos não autorizados ou perda.</p>
         
-        <h2>5. Seus Direitos</h2>
-        <p>Você tem direito de acessar, corrigir, e solicitar a exclusão de seus dados pessoais. Também pode retirar seu consentimento ao processamento de seus dados a qualquer momento.</p>
+        <h2 id="section5">5. Seus Direitos</h2>
+        <p id="section5Text">Você tem direito de acessar, corrigir, e solicitar a exclusão de seus dados pessoais. Também pode retirar seu consentimento ao processamento de seus dados a qualquer momento.</p>
         
-        <h2>6. Mudanças na Política de Privacidade</h2>
-        <p>Eventuais alterações em nossa política serão comunicadas por este mesmo canal e entrarão em vigor imediatamente após sua publicação.</p>
+        <h2 id="section6">6. Mudanças na Política de Privacidade</h2>
+        <p id="section6Text">Eventuais alterações em nossa política serão comunicadas por este mesmo canal e entrarão em vigor imediatamente após sua publicação.</p>
         
-        <h2>7. Contato</h2>
-        <p>Se tiver perguntas sobre esta política ou sobre o tratamento de seus dados pessoais, por favor, entre em contato através do email: <a href="mailto:fluableable@gmail.com">fluableable@gmail.com</a>.</p>
+        <h2 id="section7">7. Contato</h2>
+        <p id="section7Text">Se tiver perguntas sobre esta política ou sobre o tratamento de seus dados pessoais, por favor, entre em contato através do email: <a href="mailto:fluableable@gmail.com">fluableable@gmail.com</a>.</p>
         
-        <p>Esta política de privacidade está em conformidade com a Lei Geral de Proteção de Dados (LGPD) do Brasil e as políticas de privacidade globais, incluindo as políticas do Facebook, garantindo um alto padrão de proteção e transparência.</p>
+        <p id="lgpd">Esta política de privacidade está em conformidade com a Lei Geral de Proteção de Dados (LGPD) do Brasil e as políticas de privacidade globais, incluindo as políticas do Facebook, garantindo um alto padrão de proteção e transparência.</p>
     </div>
 </body>
 </html>
